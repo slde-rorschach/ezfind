@@ -506,9 +506,6 @@ class eZSolrBase
             curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
             curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, $connectionTimeout );
             curl_setopt( $ch, CURLOPT_TIMEOUT, $processTimeout );
-            curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false); // hack for not checking certificates
-            curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, false); // hack for not checking certificates
-
             if ( $this->SolrINI->variable( 'SolrBase', 'SearchServerAuthentication' ) === 'enabled' )
             {
                 if ( $this->SolrINI->variable( 'SolrBase', 'SearchServerAuthenticationMethod' ) === 'basic' )
